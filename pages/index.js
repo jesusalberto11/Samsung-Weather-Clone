@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Layout from "../components/layout";
-import utilStyles from "../styles/utils.module.css";
+import CurrentWeatherWidget from "../components/CurrentWeatherWidget";
 
 export default function Home() {
   return (
@@ -8,8 +8,9 @@ export default function Home() {
       <Head>
         <title>Samsung Weather Clone</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>Samsung Weather Clone</p>
+      <section>
+        <hr></hr>
+        <CurrentWeatherWidget></CurrentWeatherWidget>
       </section>
     </Layout>
   );
