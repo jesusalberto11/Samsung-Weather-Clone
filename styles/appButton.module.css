@@ -1,0 +1,22 @@
+.button {
+  cursor: pointer;
+
+  background-color: var(--APP-BUTTON-COLOR);
+  color: var(--APP-BUTTON-TEXT-COLOR);
+
+  height: 30px;
+  width: 70px;
+
+  border-radius: 20px;
+
+  text-decoration: none;
+  border: none;
+}
+
+.button:hover {
+  background-color: var(--APP-BUTTON-HOVER-COLOR);
+}
+
+.button:active {
+  background-color: var(--APP-BUTTON-COLOR);
+}
