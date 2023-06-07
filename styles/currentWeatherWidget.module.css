@@ -1,0 +1,70 @@
+.container {
+  background-color: var(--CARD-BACKGROUND-COLOR);
+  max-width: 340px;
+  padding: 15px 15px 15px 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  border-radius: 20px;
+}
+
+.firstSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.secondSection {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.currentWeatherContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.currentWeatherImage {
+  height: 100%;
+  width: 70px;
+}
+
+.currentWeather {
+  font-size: 46px;
+}
+
+.currentWeatherDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.thirdSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.thirdSectionItem {
+  width: 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.fourdSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
