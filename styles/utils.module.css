@@ -7,3 +7,10 @@
   font-size: 14px;
   color: var(--GRAY-TEXT-COLOR);
 }
+
+.card {
+  background-color: var(--CARD-BACKGROUND-COLOR);
+  padding: 15px 15px 15px 15px;
+
+  border-radius: 20px;
+}
