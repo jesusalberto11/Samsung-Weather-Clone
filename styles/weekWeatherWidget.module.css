@@ -1,0 +1,35 @@
+.container {
+  background-color: var(--CARD-BACKGROUND-COLOR);
+  max-width: 340px;
+  padding: 15px 15px 15px 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  border-radius: 20px;
+}
+
+.nextDayWeatherContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.nextDayHumidityAndWeatherIcons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.nextDayWeather {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buttonSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
