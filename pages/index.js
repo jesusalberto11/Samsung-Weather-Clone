@@ -7,6 +7,13 @@ import axios from "axios";
 export default function Home({ weatherData }) {
   console.log(weatherData);
 
+  const findCurrentTimeIndex = (hourlyTimes) => {
+    const todayDate = weatherData?.current_weather.time;
+    const actualHourIndex = hourlyTimes.findIndex((date) => date === todayDate);
+
+    return actualHourIndex;
+  };
+
   return (
     <Layout home>
       <Head>
@@ -14,18 +21,20 @@ export default function Home({ weatherData }) {
       </Head>
       <section>
         <hr />
-        <CurrentWeatherWidget />
+        <CurrentWeatherWidget
+          currentTemperature={weatherData?.current_weather.temperature}
+          maxTemp={weatherData?.daily.temperature_2m_max[0]}
+          minTemp={weatherData?.daily.temperature_2m_min[0]}
+          actualHour={findCurrentTimeIndex(weatherData?.hourly.time)}
+          nextHours={weatherData?.hourly.time}
+          nextHoursForecast={weatherData?.hourly.temperature_2m}
+        />
         <br />
         <WeekWeatherWidget
           forecastDays={weatherData?.daily.time}
           maxTemps={weatherData?.daily.temperature_2m_max}
           minTemps={weatherData?.daily.temperature_2m_min}
         />
-        <div> aaea{weatherData.keys}</div>
-        <div>Its day: {weatherData?.current_weather.is_day}</div>
-        <div>Current Temp: {weatherData?.current_weather.temperature}</div>
-        <div>Windspeed {weatherData?.current_weather.windspeed}</div>
-        <div>Apprent temp: {weatherData?.daily.apparent_temperature_max} </div>
       </section>
     </Layout>
   );
