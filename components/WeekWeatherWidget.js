@@ -1,33 +1,23 @@
 import AppButton from "./AppButton";
+import ForecastDay from "./ForecastsDay";
 import styles from "../styles/weekWeatherWidget.module.css";
 
-export default function WeekWeatherWidget() {
+export default function WeekWeatherWidget({
+  forecastDays,
+  maxTemps,
+  minTemps,
+}) {
   return (
     <div className={styles.container}>
-      <div className={styles.nextDayWeatherContainer}>
-        <p>Hoy</p>
-        <div className={styles.nextDayHumidityAndWeatherIcons}>
-          <p>30%</p>
-          <p>Image</p>
-        </div>
-        <p className={styles.nextDayWeather}>31°/26°</p>
-      </div>
-      <div className={styles.nextDayWeatherContainer}>
-        <p>Jueves</p>
-        <div className={styles.nextDayHumidityAndWeatherIcons}>
-          <p>30%</p>
-          <p>Image</p>
-        </div>
-        <p className={styles.nextDayWeather}>31°/26°</p>
-      </div>
-      <div className={styles.nextDayWeatherContainer}>
-        <p>Viernes</p>
-        <div className={styles.nextDayHumidityAndWeatherIcons}>
-          <p>30%</p>
-          <p>Image</p>
-        </div>
-        <p className={styles.nextDayWeather}>31°/26°</p>
-      </div>
+      {forecastDays?.map((time, index) => (
+        <ForecastDay
+          key={index}
+          date={time}
+          maxTemp={maxTemps[index]}
+          minTemp={minTemps[index]}
+        />
+      ))}
+
       <div className={styles.buttonSection}>
         <AppButton name={"Más"} />
       </div>
