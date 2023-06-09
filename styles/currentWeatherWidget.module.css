@@ -51,6 +51,13 @@
   align-items: center;
   justify-content: space-between;
   gap: 15px;
+
+  padding-bottom: 10px;
+
+  max-height: max-content;
+  scroll-behavior: none;
+  overflow-x: scroll;
+  overflow-y: none;
 }
 
 .thirdSectionItem {
